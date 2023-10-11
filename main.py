@@ -1,11 +1,15 @@
-# Example file showing a basic pygame "game loop"
-import pygame
+import pygame, os
 
-# pygame setup
 pygame.init()
 screen = pygame.display.set_mode((1280, 720))
 clock = pygame.time.Clock()
 running = True
+
+ASSETS_DIR = './assets'
+
+img = pygame.image.load(os.path.join(ASSETS_DIR, 'ball.png'))
+
+
 
 while running:
     # poll for events
@@ -15,7 +19,9 @@ while running:
             running = False
 
     # fill the screen with a color to wipe away anything from last frame
-    screen.fill("purple")
+    screen.fill("purple")   
+    
+    screen.blit(img, (500, 300))
 
     # RENDER YOUR GAME HERE
 
