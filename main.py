@@ -7,7 +7,7 @@ running = True
 
 ASSETS_DIR = './assets'
 
-img = pygame.image.load(os.path.join(ASSETS_DIR, 'ball.png'))
+img = pygame.image.load(os.path.join(ASSETS_DIR, 'house.png'))
 img = pygame.transform.scale(img, (100,100))
 
 x = 500
