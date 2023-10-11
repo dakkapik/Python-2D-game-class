@@ -8,8 +8,10 @@ running = True
 ASSETS_DIR = './assets'
 
 img = pygame.image.load(os.path.join(ASSETS_DIR, 'ball.png'))
+img = pygame.transform.scale(img, (100,100))
 
-
+x = 500
+y = 200
 
 while running:
     # poll for events
@@ -20,13 +22,17 @@ while running:
 
     # fill the screen with a color to wipe away anything from last frame
     screen.fill("purple")   
-    
-    screen.blit(img, (500, 300))
+
+    x = x + 1
+    y = y - 2
+
+    screen.blit(img, (x, y))
 
     # RENDER YOUR GAME HERE
 
     # flip() the display to put your work on screen
     pygame.display.flip()
+    # pygame.display.update()
 
     clock.tick(60)  # limits FPS to 60
 
