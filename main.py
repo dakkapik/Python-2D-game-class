@@ -15,10 +15,10 @@ class House:
         self.size = size
         self.position = position
     
-    def draw():
-        screen.blit(img, self.position)
+    def draw(self):
+        screen.blit(self.img, self.position)
 
-dakkaHouse = House('house.png', (50,50), (400, 200))
+dakkaHouse = House('house.png', (100,100), (400, 200))
 
 while running:
     # poll for events
