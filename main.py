@@ -7,11 +7,18 @@ running = True
 
 ASSETS_DIR = './assets'
 
-img = pygame.image.load(os.path.join(ASSETS_DIR, 'ball.png'))
-img = pygame.transform.scale(img, (100,100))
+class House:
+    def __init__ (self, imagePath, size, position): 
+        img = pygame.image.load(os.path.join(ASSETS_DIR, imagePath))
+        self.img = pygame.transform.scale(img, size)
 
-x = 500
-y = 200
+        self.size = size
+        self.position = position
+    
+    def draw():
+        screen.blit(img, self.position)
+
+dakkaHouse = House('house.png', (50,50), (400, 200))
 
 while running:
     # poll for events
@@ -23,10 +30,8 @@ while running:
     # fill the screen with a color to wipe away anything from last frame
     screen.fill("purple")   
 
-    x = x + 1
-    y = y - 2
-
-    screen.blit(img, (x, y))
+    dakkaHouse.draw()
+    
 
     # RENDER YOUR GAME HERE
 
