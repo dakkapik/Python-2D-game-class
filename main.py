@@ -14,11 +14,17 @@ class House:
 
         self.size = size
         self.position = position
-    
+
+    def setPosition( self, position ):
+        self.position = position 
+
     def draw(self):
         screen.blit(self.img, self.position)
 
 dakkaHouse = House('house.png', (100,100), (400, 200))
+
+x = 0
+y = 200
 
 while running:
     # poll for events
@@ -27,15 +33,13 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    # fill the screen with a color to wipe away anything from last frame
     screen.fill("purple")   
 
+    x = x + 1
+    dakkaHouse.setPosition((x, y))
+
     dakkaHouse.draw()
-    
 
-    # RENDER YOUR GAME HERE
-
-    # flip() the display to put your work on screen
     pygame.display.flip()
     # pygame.display.update()
 
