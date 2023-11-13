@@ -23,8 +23,19 @@ while running:
     # fill the screen with a color to wipe away anything from last frame
     screen.fill("purple")   
 
+    # v = s/t
+
+    # p = ds/dt
+
+    # vx =  60 px / 1s
+
+    # vx =  1 px / (1/60)s
+
+    # vy = 1 px / (-2/60)s
+
     x = x + 1
     y = y - 2
+
 
     screen.blit(img, (x, y))
 
